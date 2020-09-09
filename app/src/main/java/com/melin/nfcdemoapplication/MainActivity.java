@@ -96,17 +96,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Checks for NFC availability in the device
         mTextView=(TextView)findViewById(R.id.textView_explanation);
         mNfcAdapter=NfcAdapter.getDefaultAdapter(this);
-        if(mNfcAdapter==null){
-            Toast.makeText(this,"This device doesn't support NFC",Toast.LENGTH_LONG).show();
+        if(mNfcAdapter!=null && mNfcAdapter.isEnabled()){
+            Toast.makeText(this, "NFC available!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "NFC not available! Confirm if the device is NFC-enabled and switch it on from the settings.", Toast.LENGTH_SHORT).show();
             finish();
-            return;
-        }
-        if(!mNfcAdapter.isEnabled()){
-            mTextView.setText("Nfc is disabled");
-        }else{
-            mTextView.setText(R.string.explanation);
         }
         handleIntent(getIntent());
     }
