@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Nfc Demo</string>
     <string name="explanation">Dummy Explanation</string>
+    <string name="nfc_reader_text">NFC Reader</string>
 </resources>
