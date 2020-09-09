@@ -21,7 +21,7 @@ public class LauncherActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(LauncherActivity.this,MainActivity.class);
+                Intent intent=new Intent(LauncherActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
